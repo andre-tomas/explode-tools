@@ -1,0 +1,50 @@
+{
+  "paths": {
+    "gmx_bin": "/home/andre/software/install_path/gromacs-mc/bin",
+    "root": "/home/andre/sandbox/explode_test/sim",
+    "atomic_models": "/home/andre/software/Atomic_models2",
+    "mdp": "exp.mdp"
+  },
+
+  "force_field": "charmm36-mar2019-Fe-S",
+
+  "config_sim": {
+    "enabled": true,
+    "name": "config",
+    "pdb": "1AKI.pdb",
+    "frames_dir": "frames",
+    "num_frames": 4,
+    "nsteps": 200,
+    "time_step": 1e-4,
+    "log_frequency": 10
+  },
+
+  "explosion_sim": {
+    "name": "1AKI_explode",
+    "FWHM": 5e-4,
+    "nsteps": 1000,
+    "charge_transfer": 1,
+    "focus": 100,
+    "num_photons": 1e12,
+    "time_step": 5e-6,
+    "logging": 1,
+    "pulse_peak": 1e-3,
+    "autostop": 0,
+    "autostop_limit": 0.99,
+    "energy": [600, 800, 1000, 1200],
+    "log_frequency": 5
+  },
+
+  "run": {
+    "num_cores": 5,
+    "ionize": true,
+    "verbose": false
+  },
+
+  "sweep_mode": "independent",
+
+  "sweep": {
+    "energy": [600, 800, 1000, 1200],
+    "pulse_peak": [0.005, 0.01, 0.02]
+  }
+}

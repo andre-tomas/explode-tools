@@ -851,6 +851,11 @@ class simulation:
             if v is not None and k not in {"FWHM", "self","not_none_names"}
         ]
 
+        for _name, _value in zip(not_none_names, not_none_values):
+            setattr(self, _name, _value)
+        if FWHM is not None:
+            self.FWHM = FWHM
+
         var_mdp = {"nsteps":"nsteps",
                 "time_step":"dt",
                 "pulse_peak":"userreal1",
